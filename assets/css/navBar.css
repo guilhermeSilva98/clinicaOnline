@@ -1,0 +1,48 @@
+.paciente{
+  background: #3c8ef3;
+}
+
+header{
+  position: fixed;
+  height: 70px;
+}
+
+header h2{
+  color: #fff;
+}
+
+nav{
+  position: fixed;
+  background: #eee;
+  top: 70px;
+  height: 100vh;
+  padding: 0px;
+}
+
+nav ul{
+  list-style: none;
+  padding:0px;
+}
+
+nav ul li{
+  display: block;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  width: 250px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul li a{
+  display: block;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+}
+
+nav ul li a:hover{
+  color: #333;
+  background: #ddd;
+  text-decoration: none;
+}
