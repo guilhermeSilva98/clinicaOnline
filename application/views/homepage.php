@@ -30,7 +30,7 @@
 			</div>
 			<div class="col-lg-4 col-lg-offset-1 medico">
 				<h4>Sou Médico</h4>
-				<form class="" action="index.html" method="post">
+				<form class="" action="medico/verifLogin" method="post">
 					<div class="form-group">
 						<input type="text" name="email" placeholder="Email" class="form-control">
 					</div>

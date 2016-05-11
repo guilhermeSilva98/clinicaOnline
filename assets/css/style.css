@@ -1,8 +1,12 @@
+img{
+  max-width: 100%;
+}
+
 .login{
   margin-top: 100px;
 }
 
-.login input[type="text"], .login input[type="password"]{
+.login input[type="text"], .login input[type="password"], .login select{
   border: none;
   border-radius: 0px;
   box-shadow: none;
@@ -40,5 +44,69 @@
 }
 
 .conteudo{
-  margin:-20px 10px 0 260px;
+  margin:70px 10px 0 260px;
 }
+
+.consultaData{
+  float: left;
+  margin-right: 20px;
+}
+
+.list-group-item b span{
+  color: #aaa;
+}
+
+#perfil .list-group-item:hover a{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.1s;
+}
+
+#perfil .list-group-item a{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.1s;
+}
+
+#disponibilidade .list-group-item button{
+  visibility: hidden;
+}
+
+#disponibilidade .list-group-item:hover button{
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*end*/

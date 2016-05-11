@@ -16,7 +16,11 @@ nav.medico ul li a:hover{
 
 header{
   position: fixed;
+  width: 100%;
+  top:0;
   height: 70px;
+  line-height: 70px;
+  z-index: 2;
 }
 
 header h2{

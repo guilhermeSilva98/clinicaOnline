@@ -34,6 +34,52 @@ class clienteModel extends CI_Model
       return false;
     }
   }
+
+  public function create(){
+    $nome = $this->input->post('nome');
+    $sobrenome = $this->input->post('sobrenome');
+    $email = $this->input->post('email');
+    $senha = $this->input->post('senha');
+    $senha = sha1($senha);
+
+    $dados = Array(
+      'id_cliente' => null,
+      'nome' => $nome.' '.$sobrenome,
+      'email' => $email,
+      'senha' => $senha
+    );
+
+    $this->db->insert('cliente', $dados);
+
+    $data = Array(
+      'nome' => $nome,
+      'id' => $this->db->insert_id(),
+    );
+
+    $this->session->set_userdata($data);
+  }
+
+
+  public function verifMail($email){
+    $this->db->where('email', $email);
+    $sel = $this->db->get('cliente');
+
+    if($sel->result()){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 }
 
 

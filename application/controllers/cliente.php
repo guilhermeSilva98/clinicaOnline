@@ -20,6 +20,15 @@ class Cliente extends CI_Controller
       redirect('/');
     }
   }
+
+  public function novo(){
+    $this->load->view('paciente/cadastro');
+  }
+
+  public function addClient(){
+    $this->clienteModel->create();
+    redirect('cliente/');
+  }
 }
 
 

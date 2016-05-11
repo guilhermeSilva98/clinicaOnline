@@ -1,3 +1,12 @@
+<?php
+$data = Array(
+	'actPage' => 'dashboard'
+);
+
+$this->session->set_userdata($data);
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +15,14 @@
 	<title>Agenda Online</title>
 	<link rel="stylesheet" type="text/css" href="/clinicaOnline/assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/clinicaOnline/assets/css/style.css">
+	<script type="text/javascript" src="/clinicaOnline/assets/js/jquery.css">
+	<script type="text/javascript" src="/clinicaOnline/assets/js/script.css">
+
+	</script>
 </head>
 <body>
-  <?php require_once'application/views/inc/pacienteNav.php' ?>
+  <?php require_once'application/views/inc/medicoNav.php' ?>
     <div class="conteudo ">
-      <h2 class="col-lg-12">Dashboard</h2>
 			<div class="col-lg-12">
 				<div class="col-lg-4" id="proxCosultas">
 					<h4>Próximas consultas</h4>
@@ -21,17 +33,16 @@
 								<span>MAI</span>
 							</div>
 							<b>
-								Neurologista <span>Dr. Roberto</span>
+								Pedro <span>15h30</span>
 							</b>
 						</a>
-
 						<a href="#" class="list-group-item">
 							<div class="consultaData">
-								<b>30</b>
+								<b>15</b>
 								<span>MAI</span>
 							</div>
 							<b>
-								Neurologista <span>Dr. Roberto</span>
+								Marcos <span>16h30</span>
 							</b>
 						</a>
 					</div>
@@ -41,23 +52,7 @@
 
 			</div>
 
-			<div class="col-lg-12">
-				<div class="col-lg-4" id="novaConsulta">
-					<h4>Agendar uma consulta</h4>
-					<form class="form-horizontal" action="index.html" method="post">
-						<div class="form-group">
-							<label for="especialidade">Especialidade da consulta:</label>
-							<select class="form-control" name="" id="especialidade">
-								<option value="">Selecione um tipo</option>
-								<option value="1">Neurologista</option>
-								<option value="2">Ortopedista</option>
-								<option value="3">Cardiologista</option>
-								<option value="4">Urologista</option>
-							</select>
-						</div>
-					</form>
-		    </div>
-			</div>
+
 
 
 
