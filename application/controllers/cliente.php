@@ -7,10 +7,13 @@ class Cliente extends CI_Controller
   {
     parent::__construct();
     $this->load->model('clienteModel');
+    $this->load->model('medicoModel');
+    $this->load->model('agendaModel');
   }
 
   public function index(){
-    $this->load->view('paciente/dashboard');
+    $data['tipoConsulta'] = $this->medicoModel->tipos();
+    $this->load->view('paciente/dashboard', $data);
   }
 
   public function verifLogin(){
@@ -29,6 +32,13 @@ class Cliente extends CI_Controller
     $this->clienteModel->create();
     redirect('cliente/');
   }
+
+  public function perfil(){
+    $data['dados'] = $this->clienteModel->perfil($this->session->userdata('id'));
+    $this->load->view('paciente/profile', $data);
+  }
+
+
 }
 
 

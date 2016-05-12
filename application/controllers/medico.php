@@ -45,6 +45,15 @@ class Medico extends CI_Controller
     redirect('medico/perfil');
   }
 
+  public function adicionarHorario(){
+    $this->medicoModel->adicionarHorario();
+    redirect('medico/perfil');
+  }
+
+  public function displayDoctors($espec){
+    $this->medicoModel->displayDoctors($espec);
+  }
+
 
 
 

@@ -71,6 +71,23 @@ class clienteModel extends CI_Model
     }
   }
 
+  public function perfil($id){
+    $this->db->where('id_cliente', $id);
+    $sel = $this->db->get('cliente');
+    return $sel->result();
+  }
+
+  public function picUpload(){
+    $config['upload_path'] = './assets/uploads/paciente/';
+    $config['allowed_types'] = 'jpg|png';
+    $config['file_name'] = $this->session->userdata('id').'.jpg';
+    $config['overwrite'] = true;
+    $this->load->library('upload', $config);
+    if(!$this->upload->do_upload('foto')){
+      echo $this->upload->display_errors();
+    }
+  }
+
 
 
 

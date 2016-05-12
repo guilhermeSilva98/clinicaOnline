@@ -66,34 +66,31 @@ $this->session->set_userdata($data);
         <div class="col-lg-6">
 					<div class="list-group" id="disponibilidade">
             <h5>Adicionar horário</h5>
-            <form class="form form-inline list-group-item" action="index.html" method="post">
+            <form class="form form-inline list-group-item" action="adicionarHorario" method="post">
               <div class="form-group">
                 <select class="form-control" name="diaSemana">
                   <option value="">Selecione um dia</option>
-                  <option value="0">Dom</option>
-                  <option value="1">Seg</option>
-                  <option value="2">Ter</option>
-                  <option value="3">Qua</option>
-                  <option value="4">Qui</option>
-                  <option value="5">Sex</option>
-                  <option value="6">Sab</option>
+									<?php foreach ($semana as $key => $value) {
+										echo '<option value="'.$value->id.'">'.$value->nome.'</option>';
+									} ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="horarioIni">Início:</label>
-                <input type="time" name="horarioIni" class="form-control" value="" id="horarioIni">
+                <input type="time" name="horarioIni" class="form-control" value="00:00" id="horarioIni">
               </div>
               <div class="form-group">
                 <label for="horarioIni">Término:</label>
-                <input type="time" name="horarioFim" class="form-control" value="" id="horarioFim">
+                <input type="time" name="horarioFim" class="form-control" value="00:00" id="horarioFim">
                 <input type="submit" class="btn btn-default" value="Adicionar">
               </div>
             </form>
-            <div class="list-group-item"><b>Seg</b> <span>07:00 - 16:00</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-            <div class="list-group-item"><b>Ter</b> <span>07:00 - 16:00</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-            <div class="list-group-item"><b>Qua</b> <span>07:00 - 16:00</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-            <div class="list-group-item"><b>Qui</b> <span>07:00 - 16:00</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-            <div class="list-group-item"><b>Sex</b> <span>07:00 - 16:00</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+						<?php
+							foreach ($disp as $key => $value) {
+								echo '<div class="list-group-item"><b>'.substr($semana[$value->dia_semana]->nome,0,3).'</b> <span>'.substr($value->inicio, 0,5).' - '.substr($value->fim, 0,5).'</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+							}
+						 ?>
+
 					</div>
 		    </div>
 

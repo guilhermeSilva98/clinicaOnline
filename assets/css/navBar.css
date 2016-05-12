@@ -84,3 +84,7 @@ header h4{
 header.perfil{
   height: 100%;
 }
+
+header small{
+  color: rgba(255,255,255,0.7);
+}

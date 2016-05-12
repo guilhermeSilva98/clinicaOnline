@@ -1,8 +1,8 @@
 <?php
 
 /**
- *
- */
+*
+*/
 class medicoModel extends CI_Model
 {
 
@@ -104,6 +104,43 @@ class medicoModel extends CI_Model
     return $sel->result();
   }
 
+  public function adicionarHorario(){
+    $id = $this->session->userdata('id');
+    $dia = $this->input->post('diaSemana');
+    $horarioIni = $this->input->post('horarioIni');
+    $horarioFim = $this->input->post('horarioFim');
+
+    $data = Array(
+      'id_entrada' => null,
+      'id_medico' => $id,
+      'dia_semana' => $dia,
+      'inicio' => $horarioIni,
+      'fim' => $horarioFim
+    );
+
+    $this->db->insert('disponibilidade', $data);
+
+
+
+  }
+
+  public function tipos(){
+    $this->db->select('medico.especialidade, especialidade.nome, especialidade.id');
+    $this->db->from('medico');
+    $this->db->group_by('especialidade');
+    $this->db->join('especialidade', 'especialidade.id = medico.especialidade', 'inner');
+    $sel = $this->db->get();
+    return $sel->result();
+  }
+
+  public function displayDoctors($espec){
+    $this->db->select('medico.id_medico, medico.nome,medico. email, especialidade.nome as especialidade');
+    $this->db->join('especialidade', 'especialidade.id = medico.especialidade', 'inner');
+    $this->db->where('especialidade', $espec);
+    $sel = $this->db->get('medico');
+    echo json_encode($sel->result());
+  }
+
 
 
 
@@ -118,4 +155,4 @@ class medicoModel extends CI_Model
 
 
 
- ?>
+?>
