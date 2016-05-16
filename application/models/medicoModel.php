@@ -119,9 +119,6 @@ class medicoModel extends CI_Model
     );
 
     $this->db->insert('disponibilidade', $data);
-
-
-
   }
 
   public function tipos(){
@@ -134,13 +131,28 @@ class medicoModel extends CI_Model
   }
 
   public function displayDoctors($espec){
-    $this->db->select('medico.id_medico, medico.nome,medico. email, especialidade.nome as especialidade');
+    $this->db->select('medico.id_medico, medico.nome, medico.email, especialidade.nome as especialidade');
     $this->db->join('especialidade', 'especialidade.id = medico.especialidade', 'inner');
     $this->db->where('especialidade', $espec);
     $sel = $this->db->get('medico');
     echo json_encode($sel->result());
   }
 
+  public function displayDoctor($id){
+    $this->db->select('medico.id_medico, medico.nome, medico.email, especialidade.nome as especialidade, especialidade.id');
+    $this->db->join('especialidade', 'especialidade.id = medico.especialidade', 'inner');
+    $this->db->where('id_medico', $id);
+    $sel = $this->db->get('medico');
+    return $sel->result();
+  }
+
+  public function displaySchedule($id){
+    $this->db->select('disponibilidade.*, semana.nome');
+    $this->db->join('semana', 'semana.id = disponibilidade.dia_semana', 'inner');
+    $this->db->where('id_medico', $id);
+    $sel = $this->db->get('disponibilidade');
+    return $sel->result();
+  }
 
 
 

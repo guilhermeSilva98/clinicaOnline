@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/clinicaOnline/assets/css/navBar.css" media="screen" title="no title" charset="utf-8">
 <script type="text/javascript" src="/clinicaOnline/assets/js/jquery.js"></script>
 <script type="text/javascript" src="/clinicaOnline/assets/js/script.js"></script>
+<script type="text/javascript" src="/clinicaOnline/assets/js/bootstrap.js"></script>
 <header class="paciente">
   <div class="col-lg-2">
     <h2>Cliente <small><?php echo  $this->session->userdata('actPage'); ?></small></h2>

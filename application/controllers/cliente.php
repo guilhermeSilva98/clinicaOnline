@@ -38,6 +38,13 @@ class Cliente extends CI_Controller
     $this->load->view('paciente/profile', $data);
   }
 
+  public function agendarConsulta($id){
+    $data['medico'] = $this->medicoModel->displayDoctor($id);
+    $data['tipoConsulta'] = $this->medicoModel->tipos();
+    $data['disponibilidade'] = $this->medicoModel->displaySchedule($id);
+    $this->load->view('paciente/agendarConsulta', $data);
+  }
+
 
 }
 

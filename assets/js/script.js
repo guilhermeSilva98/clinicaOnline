@@ -16,8 +16,8 @@ $(document).ready(function(){
 
   function preencherLista(lista, data){
     $.each(data, function(index, value){
-      lista.find('tbody').append('<tr><td>'+value.nome+'</td><td>'+value.email+'</td><td><a href="#">Agendar</a></td></tr>');
-    })
+      lista.find('tbody').append('<tr><td>'+value.nome+'</td><td>'+value.email+'</td><td><a href="cliente/agendarConsulta/'+value.id_medico+'">Agendar</a></td></tr>');
+    });
   }
 
 
