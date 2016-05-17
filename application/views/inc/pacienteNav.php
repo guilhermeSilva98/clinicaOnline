@@ -1,5 +1,6 @@
+<?php  ?>
 <link rel="stylesheet" href="/clinicaOnline/assets/css/navBar.css" media="screen" title="no title" charset="utf-8">
-<script type="text/javascript" src="/clinicaOnline/assets/js/jquery.js"></script>
+<script type="text/javascript" src="/clinicaOnline/assets/js/jquery-2.2.3.min.js"></script>
 <script type="text/javascript" src="/clinicaOnline/assets/js/script.js"></script>
 <script type="text/javascript" src="/clinicaOnline/assets/js/bootstrap.js"></script>
 <header class="paciente">
