@@ -27,6 +27,7 @@ class clienteModel extends CI_Model
       $data = Array(
         'nome' => $dados[0]->nome,
         'id' => $dados[0]->id_cliente,
+        'tipo' => 'Cliente'
       );
       $this->session->set_userdata($data);
       return true;

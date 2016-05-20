@@ -15,13 +15,11 @@ $this->session->set_userdata($data);
 	<title>Agenda Online</title>
 	<link rel="stylesheet" type="text/css" href="/clinicaOnline/assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/clinicaOnline/assets/css/style.css">
-	<script type="text/javascript" src="/clinicaOnline/assets/js/jquery.css">
-	<script type="text/javascript" src="/clinicaOnline/assets/js/script.css">
-
-	</script>
+	<script type="text/javascript" src="/clinicaOnline/assets/js/jquery.css"></script>
+	<script type="text/javascript" src="/clinicaOnline/assets/js/script.css"></script>
 </head>
 <body>
-  <?php require_once'application/views/inc/medicoNav.php' ?>
+  <?php require_once'application/views/inc/nav.php' ?>
     <div class="conteudo ">
 			<div class="col-lg-12">
 				<div class="col-lg-4" id="proxCosultas">

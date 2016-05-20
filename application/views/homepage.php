@@ -17,13 +17,13 @@
 				<h4>Sou Paciente</h4>
 				<form class="" action="cliente/verifLogin" method="post">
 					<div class="form-group">
-						<input type="text" name="email" placeholder="Email" class="form-control">
+						<input type="text" name="email" placeholder="Email" class="form-control df_input">
 					</div>
 					<div class="form-group">
-						<input type="password" name="senha" placeholder="Senha" class="form-control">
+						<input type="password" name="senha" placeholder="Senha" class="form-control df_input">
 					</div>
 					<div class="form-group">
-						<input class="btn btn-default btn-block" type="submit" value="Entrar">
+						<input class="btn btn-default btn-block df_submit" type="submit" value="Entrar">
 					</div>
 					 <a href="cliente/novo">Cadastre-se</a>
 				</form>
@@ -32,13 +32,13 @@
 				<h4>Sou Médico</h4>
 				<form class="" action="medico/verifLogin" method="post">
 					<div class="form-group">
-						<input type="text" name="email" placeholder="Email" class="form-control">
+						<input type="text" name="email" placeholder="Email" class="form-control df_input">
 					</div>
 					<div class="form-group">
-						<input type="password" name="senha" placeholder="Senha" class="form-control">
+						<input type="password" name="senha" placeholder="Senha" class="form-control df_input">
 					</div>
 					<div class="form-group">
-						<input class="btn btn-default btn-block" type="submit" value="Entrar">
+						<input class="btn btn-default btn-block df_submit" type="submit" value="Entrar">
 					</div>
 					<a href="medico/novo">Cadastre-se</a>
 				</form>

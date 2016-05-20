@@ -32,6 +32,7 @@ class medicoModel extends CI_Model
       $data = Array(
         'nome' => $dados[0]->nome,
         'id' => $dados[0]->id_medico,
+        'tipo' => 'Médico'
       );
       $this->session->set_userdata($data);
       return true;
@@ -88,7 +89,7 @@ class medicoModel extends CI_Model
   }
 
   public function picUpload(){
-    $config['upload_path'] = './assets/uploads/';
+    $config['upload_path'] = './assets/uploads/medico/';
     $config['allowed_types'] = 'jpg|png';
     $config['file_name'] = $this->session->userdata('id').'.jpg';
     $config['overwrite'] = true;
@@ -114,8 +115,8 @@ class medicoModel extends CI_Model
       'id_entrada' => null,
       'id_medico' => $id,
       'dia_semana' => $dia,
-      'inicio' => $horarioIni,
-      'fim' => $horarioFim
+      'horario_ini' => $horarioIni,
+      'horario_fim' => $horarioFim
     );
 
     $this->db->insert('disponibilidade', $data);

@@ -15,35 +15,35 @@
 		<div class="col-lg-8 col-lg-offset-3 login">
 			<div class="col-lg-8 medico">
 				<form class="" action="addMedico" method="post">
-          <div class="form-group">
-						<input type="text" name="prefix" placeholder="Prefixo" class="form-control">
+				  	<div class="form-group">
+						<input type="text" name="prefix" placeholder="Prefixo" class="form-control df_input">
 					</div>
 					<div class="form-group">
-						<input type="text" name="nome" placeholder="Nome" class="form-control">
+						<input type="text" name="nome" placeholder="Nome" class="form-control df_input">
 					</div>
 					<div class="form-group">
-						<input type="text" name="sobrenome" placeholder="Sobrenome" class="form-control">
+						<input type="text" name="sobrenome" placeholder="Sobrenome" class="form-control df_input">
 					</div>
-          <div class="form-group">
-            <input type="text" name="email" placeholder="Email" class="form-control">
-          </div>
-          <div class="form-group">
-            <input type="password" name="senha" placeholder="Senha" class="form-control">
-          </div>
+				  	<div class="form-group">
+				    	<input type="text" name="email" placeholder="Email" class="form-control df_input">
+				  	</div>
+				  	<div class="form-group">
+				    	<input type="password" name="senha" placeholder="Senha" class="form-control df_input">
+				 	</div>
 					<div class="form-group" id="espec">
-            <select class="form-control" id="type" name="especialidade">
-              <option value="null">Especialidade</option>
+			            <select class="form-control df_input" id="type" name="especialidade">
+			             	<option value="null">Especialidade</option>
 							<option value="new">Outra especialidade</option>
 							<?php
 								foreach ($espec as $key => $value) {
 									echo '<option value="'.$value->id.'">'.$value->nome.'</option>';
 								}
 							 ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <input class="btn btn-default btn-block" type="submit" value="Cadastrar">
-          </div>
+			            </select>
+	          		</div>
+			        <div class="form-group">
+			        	<input class="btn btn-default btn-block df_submit" type="submit" value="Cadastrar">
+			        </div>
 
 				</form>
 			</div>

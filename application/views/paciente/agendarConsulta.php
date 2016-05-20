@@ -27,10 +27,10 @@ $this->session->set_userdata($data);
 					<h4 class="col-lg-12"><?php echo $medico[0]->nome; ?></h4>
           <figure class="col-lg-4">
             <?php
-              if(!file_exists('assets/uploads/medico/'.$this->session->userdata('id').'.jpg')){
+              if(!file_exists('assets/uploads/medico/'.$medico[0]->id_medico.'.jpg')){
                 echo '<img src="/clinicaOnline/assets/img/avatar.png" alt="avatar">';
               }else{
-                echo '<img src="/clinicaOnline/assets/uploads/medico/'.$this->session->userdata('id').'.jpg" alt="avatar">';
+                echo '<img src="/clinicaOnline/assets/uploads/medico/'.$medico[0]->id_medico.'.jpg" alt="avatar">';
               }
              ?>
           </figure>
@@ -38,8 +38,6 @@ $this->session->set_userdata($data);
         <div class="col-lg-12">
           <h4>Escolha o horário desejado</h4>
           <?php
-
-
 
 					 ?>
 					<div class="list-group col-lg-6">
@@ -71,15 +69,14 @@ $this->session->set_userdata($data);
 													<div class="panel-body">Selecione o horário</div>';
 								foreach ($disponibilidade as $key => $value) {
 									if($value->dia_semana == date('N', $displayDate)){
-										$inicio = $value->inicio;
-										$fim = $value->fim;
+										$inicio = $value->horario_ini;
+										$fim = $value->horario_fim;
 										$period = new DatePeriod(
 										    new DateTime($inicio),
 										    new DateInterval('PT30M'),
 										    new DateTime($fim)
 										);
 
-										for($y = 0; $y < count($period))
 										foreach ($period as $date) {
 										    echo '<div class="panel-body"><a href="#">'.$date->format("H:i\n").' - '.$date->format("H:i\n").'</a></div>';
 										}

@@ -17,7 +17,7 @@ $this->session->set_userdata($data);
 	<link rel="stylesheet" type="text/css" href="/clinicaOnline/assets/css/style.css">
 </head>
 <body>
-  <?php require_once'application/views/inc/pacienteNav.php' ?>
+  <?php require_once'application/views/inc/nav.php' ?>
     <div class="conteudo">
 			<div class="col-lg-12" id="perfil">
         <h3 class="col-lg-12">Meu perfil</h3>

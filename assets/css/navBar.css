@@ -1,17 +1,9 @@
-header.paciente{
-  background: #3c8ef3;
+header{
+  background: #536dfe;
 }
 
-header.medico{
-  background: #f2a03d;
-}
-
-nav.paciente ul li a:hover{
-  border-right: 4px solid #3c8ef3;
-}
-
-nav.medico ul li a:hover{
-  border-right: 4px solid #f2a03d;
+nav ul li a:hover{
+  border-right: 4px solid #536dfe;
 }
 
 header{
@@ -29,7 +21,7 @@ header h2{
 
 nav{
   position: fixed;
-  background: #eee;
+  background: #43434a;
   top: 70px;
   height: 100vh;
   padding: 0px;
@@ -43,23 +35,23 @@ nav ul{
 nav ul li{
   display: block;
   width: 100%;
-  height: 45px;
-  line-height: 45px;
+  height: 50px;
+  line-height: 50px;
   width: 250px;
-  border-bottom: 1px solid #ddd;
 }
 
 nav ul li a{
   display: block;
-  color: #333;
+  color: #fff;
   width: 100%;
   height: 100%;
   padding-left: 20px;
+  text-transform: uppercase;
 }
 
 nav ul li a:hover{
-  color: #333;
-  background: #ddd;
+  color: #fff;
+  background: #2c2c30;
   text-decoration: none;
 }
 

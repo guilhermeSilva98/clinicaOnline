@@ -17,7 +17,7 @@ $this->session->set_userdata($data);
 	<link rel="stylesheet" type="text/css" href="/clinicaOnline/assets/css/style.css">
 </head>
 <body>
-  <?php require_once'application/views/inc/medicoNav.php' ?>
+  <?php require_once'application/views/inc/nav.php' ?>
     <div class="conteudo">
 			<div class="col-lg-12" id="perfil">
         <h3 class="col-lg-12">Meu perfil</h3>
@@ -43,10 +43,10 @@ $this->session->set_userdata($data);
         <div class="col-lg-4">
 					<figure class="col-lg-6">
             <?php
-              if(!file_exists('assets/uploads/'.$this->session->userdata('id').'.jpg')){
+              if(!file_exists('assets/uploads/medico/'.$this->session->userdata('id').'.jpg')){
                 echo '<img src="/clinicaOnline/assets/img/avatar.png" alt="avatar">';
               }else{
-                echo '<img src="/clinicaOnline/assets/uploads/'.$this->session->userdata('id').'.jpg" alt="avatar">';
+                echo '<img src="/clinicaOnline/assets/uploads/medico/'.$this->session->userdata('id').'.jpg" alt="avatar">';
               }
              ?>
           </figure>
@@ -77,17 +77,17 @@ $this->session->set_userdata($data);
               </div>
               <div class="form-group">
                 <label for="horarioIni">Início:</label>
-                <input type="time" name="horarioIni" class="form-control" value="00:00" id="horarioIni">
+                <input type="time" name="horarioIni" class="form-control" value="00:00" id="horarioIni" placeholder="10:00">
               </div>
               <div class="form-group">
                 <label for="horarioIni">Término:</label>
-                <input type="time" name="horarioFim" class="form-control" value="00:00" id="horarioFim">
+                <input type="time" name="horarioFim" class="form-control" value="00:00" id="horarioFim" placeholder="10:00">
                 <input type="submit" class="btn btn-default" value="Adicionar">
               </div>
             </form>
 						<?php
 							foreach ($disp as $key => $value) {
-								echo '<div class="list-group-item"><b>'.substr($semana[$value->dia_semana]->nome,0,3).'</b> <span>'.substr($value->inicio, 0,5).' - '.substr($value->fim, 0,5).'</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+								echo '<div class="list-group-item"><b>'.substr($semana[$value->dia_semana]->nome,0,3).'</b> <span>'.substr($value->horario_ini, 0,5).' - '.substr($value->horario_fim, 0,5).'</span><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 							}
 						 ?>
 

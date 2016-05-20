@@ -44,6 +44,10 @@ class Cliente extends CI_Controller
     $this->load->view('paciente/agendarConsulta', $data);
   }
 
+  public function escolherEspecialista(){
+    $this->load->view('paciente/listaDoutor');
+  }
+
 
 }
 
