@@ -1,6 +1,6 @@
 <?php
 $data = Array(
-	'actPage' => 'dashboard'
+	'actPage' => 'agendar consulta'
 );
 $this->session->set_userdata($data);
 
@@ -19,10 +19,13 @@ $this->session->set_userdata($data);
     <div class="conteudo ">
     <h3 class="col-lg-12">Escolher especialidade</h3>
     <div class="col-lg-4">
-    	<form class="form paciente">
+    	<form class="form paciente" action="/clinicaOnline/cliente/escolherEspecialista/" id="especForm">
     		<div class="form-group">
-	    		<select class=" form-control df_input">
+	    		<select class=" form-control df_input" id="especSelect">
 	    			<option>Selecione uma especialidade</option>
+	    			<?php foreach ($especialidade as $key => $value) {
+	    				echo '<option value="'.$value->id.'">'.$value->nome.'</option>';
+	    			} ?>
 	    		</select>
     		</div>
     		<div class="form-group">
@@ -32,85 +35,26 @@ $this->session->set_userdata($data);
     	</form>
     </div>
     <div class="col-lg-12">
-    	<div class="col-lg-2">
-    		<a href="#" class="block">
-	    		<figure>
-	    			<img src="/clinicaOnline/assets/uploads/medico/3.jpg">
-	    		</figure>
-	    		<h4>Doutor hue</h4>
-    		</a>
-    	</div>
-    	<div class="col-lg-2">
-    		<a href="#" class="block">
-    		<figure>
-    			<img src="/clinicaOnline/assets/uploads/medico/1.jpg">
-    		</figure>
-    		</a>
-    	</div>
+    <?php 
+    
+    if(@$lista != ''){
+    	foreach ($lista as $key => $value) {
+    		echo '<div class="col-lg-2">
+		    		<a href="../agendarConsulta/'.$value->id_medico.'" class="block">
+			    		<figure>
+			    			<img src="/clinicaOnline/assets/uploads/medico/'.$value->id_medico.'.jpg">
+			    		</figure>
+			    		<h4>'.$value->nome.'</h4>
+		    		</a>
+		    	</div>';
+    	}
+    }
+    	
+
+
+
+    ?>
     </div>
-			<div class="col-lg-6">
-				<a href="#" class="block">
-					<div class="icon_hl col-mg-3 df_blue_bg"><figure><img src="/clinicaOnline/assets/img/icons/plus.png" alt="+"></figure></div>
-					<h4>Agendar Consulta</h4>
-				</a>
-				<div href="#" class="block">
-					<div class="icon_hl col-mg-3 df_blue_bg"><figure><img src="/clinicaOnline/assets/img/icons/clock.png" alt="+"></figure></div>
-					<h4>Sua Agenda</h4>
-					<div class="list-group block_content">
-						<ul>
-							<li class="list-group-item"><a href="#"><b>20/05</b> <span>15:30</span> Dr Marcos - <i>Cardiologia</i></a></li>
-							<li class="list-group-item"><a href="#"><b>31/06</b> <span>15:30</span> Dra Pietra - <i>Psicologia</i></a></li>
-						</ul>
-					</div>
-				</div>
-		    </div>
-
-		    <div class="col-lg-3">
-				<a href="#" class="block block_sqr">
-					<div class="icon_hl col-mg-3 alert_bg"><figure><img src="/clinicaOnline/assets/img/icons/alert.png" alt="+"></figure></div>
-					<h4>Consulta às 14:00</h4>
-				</a>
-		    </div>
-		    <div class="col-lg-3">
-				<a href="#" class="block">
-					<div class="icon_hl col-mg-3 df_blue_bg"><figure><img src="/clinicaOnline/assets/img/icons/bell_full.png" alt="+"></figure></div>
-					<h4><b>1</b> Nova Notificação</h4>
-				</a>
-		    </div>
-				<h4 class="col-lg-12">Agendar nova consulta</h4>
-				<div class="col-lg-6">
-					<div class="list-group" id="consulta">
-						<form class="form form-horizontal" action="adicionarHorario" method="post" id="consultaForm">
-							<div class="form-group">
-								<select class="form-control" name="diaSemana" id="diaSemana">
-									<option value="">Selecione o tipo da consulta</option>
-									<?php foreach ($tipoConsulta as $key => $value) {
-										echo '<option value="'.$value->id.'">'.$value->nome.'</option>';
-									} ?>
-								</select>
-								<table class="table table-hover table-striped" id="medicoLista">
-									<thead>
-										<tr>
-											<th>Nome</th>
-											<th>Email</th>
-											<th>Ação</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td colspan="3">
-												Nenhum médico listado
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
-						</form>
-
-					</div>
-				</div>
-			</div>
     </div>
 
 </body>

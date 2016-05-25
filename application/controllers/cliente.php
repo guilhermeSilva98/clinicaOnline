@@ -41,11 +41,20 @@ class Cliente extends CI_Controller
   public function agendarConsulta($id){
     $data['medico'] = $this->medicoModel->displayDoctor($id);
     $data['disponibilidade'] = $this->medicoModel->displaySchedule($id);
+    $data['agenda'] = $this->medicoModel->consultas($id);
     $this->load->view('paciente/agendarConsulta', $data);
   }
 
-  public function escolherEspecialista(){
-    $this->load->view('paciente/listaDoutor');
+  public function escolherEspecialista($espec = null){
+    $data['especialidade'] = $this->medicoModel->especialidade();
+    if($espec !== null){
+      $data['lista'] = $this->medicoModel->displayDoctors($espec);
+    }
+    $this->load->view('paciente/listaDoutor', $data);
+  }
+
+  public function salvarConsulta(){
+    $this->clienteModel->salvarConsulta();
   }
 
 

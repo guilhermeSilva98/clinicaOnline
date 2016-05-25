@@ -89,6 +89,29 @@ class clienteModel extends CI_Model
     }
   }
 
+  public function salvarConsulta(){
+
+    $id_medico = $this->input->post('id_medico');
+    $id_cliente = $this->input->post('id_cliente');
+    $data = $this->input->post('data');
+    $horario = $this->input->post('horario');
+
+    $dados = array(
+      'id_cliente' => $id_cliente,
+      'id_medico' => $id_medico,
+      'data' => $data,
+      'horario_ini' => $horario,
+    );
+
+    $this->db->insert('consulta', $dados);
+    if($this->db->insert_id() > 0){
+      echo 'Agendamento realizado';
+    }
+
+
+
+  }
+
 
 
 

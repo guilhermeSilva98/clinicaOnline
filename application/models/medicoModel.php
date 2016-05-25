@@ -136,7 +136,7 @@ class medicoModel extends CI_Model
     $this->db->join('especialidade', 'especialidade.id = medico.especialidade', 'inner');
     $this->db->where('especialidade', $espec);
     $sel = $this->db->get('medico');
-    echo json_encode($sel->result());
+    return $sel->result();
   }
 
   public function displayDoctor($id){
@@ -152,6 +152,12 @@ class medicoModel extends CI_Model
     $this->db->join('semana', 'semana.id = disponibilidade.dia_semana', 'inner');
     $this->db->where('id_medico', $id);
     $sel = $this->db->get('disponibilidade');
+    return $sel->result();
+  }
+
+  public function consultas($id){
+    $this->db->where('id_medico', $id);
+    $sel = $this->db->get('consulta');
     return $sel->result();
   }
 
